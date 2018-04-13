@@ -1,9 +1,10 @@
 
 #include "insertionSort.h"
 #include <vector>
+#include <cstdlib>
 
 template<class T>
-insertionSort::insertionSort(std::vector<T> &arr, bool isAsc){
+insertionSort<T>::insertionSort(std::vector<T> &arr, bool isAsc){
     if (isAsc)
         ascSort(arr);
     else
@@ -11,7 +12,7 @@ insertionSort::insertionSort(std::vector<T> &arr, bool isAsc){
 }
 
 template<class T>
-insertionSort::ascSort(std::vector<T> &arr){
+void insertionSort<T>::ascSort(std::vector<T> &arr){
     for (size_t i = 1; i < arr.size(); i++){
         T key = arr[i];
         size_t j = i - 1;
@@ -25,7 +26,7 @@ insertionSort::ascSort(std::vector<T> &arr){
 }
 
 template<class T>
-insertionSort::desSort(std::vector<T> &arr){
+void insertionSort<T>::desSort(std::vector<T> &arr){
     for (size_t i = 1; i< arr.size(); i++){
                 T key = arr[i];
         size_t j = i - 1;

@@ -1,7 +1,7 @@
 #include <vector>
 #include <iostream>
 #include <cstdlib>
-#include "Insertion Sort/insertionSort.h"
+#include "Insertion_Sort/insertionSort.h"
 
 using namespace std;
 
@@ -25,7 +25,7 @@ int main(void){
     }
     cout << endl;
 
-    insertionSort(copy1, true);
+    insertionSort<int>(copy1, true);
 
     cout << "After sorting in ascending order: ";
     for (size_t i = 0; i < copy1.size(); i++){
@@ -35,7 +35,7 @@ int main(void){
 
     vector<int> copy2 = arr;
 
-    insertionSort(copy2, false);
+    insertionSort<int>(copy2, false);
 
     cout << "After sorting in ascending order: ";
     for (size_t i = 0; i < copy2.size(); i++){

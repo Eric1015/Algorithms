@@ -1,5 +1,6 @@
 
-
+#ifndef _INSERTIONSORT_H_
+#define _INSERTIONSORT_H_
 #include <vector>
 
 template<class T>
@@ -21,10 +22,13 @@ class insertionSort{
         /*
         * Sort the arr in ascending order
         * */
-        ascSort(std::vector<T> &arr);
+        void ascSort(std::vector<T> &arr);
 
         /*
         * Sort the arr in descending order
         * */
-        desSort(std::vector<T> &arr);
-}
+        void desSort(std::vector<T> &arr);
+};
+
+#include "insertionSort.cpp"
+#endif
