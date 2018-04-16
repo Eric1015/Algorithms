@@ -3,8 +3,9 @@
 #include <vector>
 #include <cstdlib>
 
-template<class T>
-selectionSort<T>::selectionSort(std::vector<T> &arr, bool isAsc){
+template <class T>
+selectionSort<T>::selectionSort(std::vector<T> &arr, bool isAsc)
+{
     if (isAsc)
         ascSort(arr);
     else
