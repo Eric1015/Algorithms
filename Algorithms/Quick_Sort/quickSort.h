@@ -19,6 +19,16 @@ class quickSort{
     private:
 
         /*
+        * Helper function for recursively call the partition function 
+        * until the pivot equals to both of low and hi
+        * @param arr::the array to be sorted
+        * @param isAsc::determine whether to sort arr is ascending order or descending order
+        * @param low::the lower bound of the partition
+        * @param hi::the upper bound of the partition
+        * */
+        void quickSort<T>::quickSortHelper(std::vector<T> &arr, bool isAsc, int low, int hi);
+
+        /*
         * Obtain the pivot from the array and return it
         * Sort the forward and backward of pivot so everything before the pivot is smaller than pivot
         * and everything after the pivot is larger than pivot

@@ -6,11 +6,36 @@
 template <class T>
 quickSort<T>::quickSort(std::vector<T> &arr, bool isAsc)
 {
+    quickSortHelper(arr, isAsc, 0, arr.size() - 1);
+}
+
+template<class T>
+void quickSort<T>::quickSortHelper(std::vector<T> &arr, bool isAsc, int low, int hi){
     if (isAsc){
-        
+        int newPivot = ascPartition(arr, low, hi);
+        if (newPivot != low && newPivot != hi){
+            quickSortHelper(arr, isAsc, low, newPivot-1);
+            quickSortHelper(arr, isAsc, newPivot+1, hi);
+        }
+        else if(newPivot == low && newPivot != hi){
+            quickSortHelper(arr, isAsc, newPivot+1, hi);
+        }
+        else if(newPivot != low && newPivot == hi){
+            quickSortHelper(arr, isAsc, low, newPivot-1);
+        }
     }
     else{
-
+        int newPivot = desPartition(arr, low, hi);
+        if (newPivot != low && newPivot != hi){
+            quickSortHelper(arr, isAsc, low, newPivot-1);
+            quickSortHelper(arr, isAsc, newPivot+1, hi);
+        }
+        else if(newPivot == low && newPivot != hi){
+            quickSortHelper(arr, isAsc, newPivot+1, hi);
+        }
+        else if(newPivot != low && newPivot == hi){
+            quickSortHelper(arr, isAsc, low, newPivot-1);
+        }
     }
 }
 
