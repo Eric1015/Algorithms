@@ -6,26 +6,52 @@
 template <class T>
 quickSort<T>::quickSort(std::vector<T> &arr, bool isAsc)
 {
-    if (isAsc)
-        ascSort(arr);
-    else
-        desSort(arr);
+    if (isAsc){
+        
+    }
+    else{
+
+    }
 }
 
 template <class T>
-void quickSort<T>::ascSort(std::vector<T> &arr)
+int quickSort<T>::ascPartition(std::vector<T> &arr, int low, int hi)
 {
+    int pivot = hi;
+    int count = low - 1;
+    for (int i = low; i < hi; i++){
+        if (arr[i] < arr[pivot]){
+            T temp = arr[i];
+            count++;
+            arr[i] = arr[count];
+            arr[count] = temp;
+        }
+    }
+    count++;
+    T temp = arr[count];
+    arr[count] = arr[pivot];
+    arr[pivot] = temp;
 
+    return count;
 }
 
 template <class T>
-void quickSort<T>::desSort(std::vector<T> &arr)
+int quickSort<T>::ascPartition(std::vector<T> &arr, int low, int hi)
 {
+    int pivot = hi;
+    int count = low - 1;
+    for (int i = low; i < hi; i++){
+        if (arr[i] > arr[pivot]){
+            T temp = arr[i];
+            count++;
+            arr[i] = arr[count];
+            arr[count] = temp;
+        }
+    }
+    count++;
+    T temp = arr[count];
+    arr[count] = arr[pivot];
+    arr[pivot] = temp;
 
-}
-
-template <class T>
-void quickSort<T>::partition(std::vector<T> &arr, int low, int hi)
-{
-
+    return count;
 }

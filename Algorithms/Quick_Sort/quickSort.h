@@ -19,22 +19,24 @@ class quickSort{
     private:
 
         /*
-        * Sort the arr in ascending order
-        * */
-        void ascSort(std::vector<T> &arr);
-
-        /*
-        * Sort the arr in descending order
-        * */
-        void desSort(std::vector<T> &arr);
-
-        /*
-        * Obtain the pivot from the array
+        * Obtain the pivot from the array and return it
+        * Sort the forward and backward of pivot so everything before the pivot is smaller than pivot
+        * and everything after the pivot is larger than pivot
         * @param arr::the array to be partitioned
         * @param low::the lower bound of the range partition is performed
         * @param hi::the upper bound of the range partition is performed
         * */
-        void partition(std::vector<T> &arr, int low, int hi);
+        int ascPartition(std::vector<T> &arr, int low, int hi);
+
+                /*
+        * Obtain the pivot from the array and return it
+        * Sort the forward and backward of pivot so everything before the pivot is larger than pivot
+        * and everything after the pivot is smaller than pivot
+        * @param arr::the array to be partitioned
+        * @param low::the lower bound of the range partition is performed
+        * @param hi::the upper bound of the range partition is performed
+        * */
+        int desPartition(std::vector<T> &arr, int low, int hi);
 };
 
 #include "quickSort.cpp"
