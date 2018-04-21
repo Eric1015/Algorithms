@@ -2,6 +2,8 @@
 #include <iostream>
 #include <cstdlib>
 #include "Insertion_Sort/insertionSort.h"
+#include "Selection_Sort/selectionSort.h"
+#include "Quick_Sort/quickSort.h"
 
 using namespace std;
 
