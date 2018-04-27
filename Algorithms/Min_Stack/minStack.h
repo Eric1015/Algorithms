@@ -9,39 +9,39 @@ class minStack{
 
         /*
         * The constructor of minStack 
-        * It takes a vector and arrange them to ascending order or descending order
-        * depending on the specification
-        * @param array::the array to be sorted
-        * @param isAsc::the condition variable determines whether to sort in 
-        *               ascending order or descending order
+        * This creates two vectors for a data storing stack and min storing stack
+        * This object will have constant time on retrieving 
+        * the minimum out of the data stored
         **/
-        minStack(std::vector<T> &arr, bool isAsc);
+        minStack();
+
+        /*
+        * Add a new element into the stack and the appropriate value to minStack
+        * @param elem::the new element to be added
+        **/
+        void push(T elem);
+
+        /*
+        * Take out the last element from the stack and minStack too
+        * Return the removed element
+        **/
+        T pop();
+
+        /*
+        * Return the last element in stack vector
+        **/
+        T peek();
+
+        /*
+        * Return the minimum value out of the stack
+        * This corresponds to take the last element of min_stack vector
+        **/
+        T getMin();
     
     private:
         vector<T> min_stack;
         vector<T> stack;
         T min;
-
-        void push(T elem){
-            if (min > elem)
-                min_stack.push_back(elem);
-            else
-                min_stack.push_back(min);
-            stack.push_back(elem);
-        }
-
-        T pop(){
-            min_stack.pop();
-            return stack.pop();
-        }
-
-        T peak(){
-            return stack.peak();
-        }
-
-        T getMin(){
-
-        }
 };
 
 #include "minStack.cpp"
