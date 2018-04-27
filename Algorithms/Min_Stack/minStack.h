@@ -37,11 +37,17 @@ class minStack{
         * This corresponds to take the last element of min_stack vector
         **/
         T getMin();
+
+        /*
+        * Return true if the stack is empty, false otherwise
+        **/
+        bool empty();
     
     private:
         vector<T> min_stack;
         vector<T> stack;
         T min;
+        int size = 0;
 };
 
 #include "minStack.cpp"
