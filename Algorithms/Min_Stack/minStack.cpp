@@ -1,5 +1,6 @@
 #include "minStack.h"
 #include <vector>
+#include <exception>
 #include <cstdlib>
 
 template <class T>
@@ -28,7 +29,7 @@ template <class T>
 T minStack<T>::pop()
 {
     if (this->empty())
-        return -1;
+        throw "The stack is empty";
     T peek = stack.back();
     min_stack.pop_back();
     stack.pop_back();
@@ -40,7 +41,7 @@ template <class T>
 T minStack<T>::peek()
 {
     if (this->empty())
-        return -1;
+        throw "The stack is empty";
     return stack.back();
 }
 
@@ -48,7 +49,7 @@ template <class T>
 T minStack<T>::getMin()
 {
     if (this->empty())
-        return -1;
+        throw "The stack is empty";
     return min_stack.back();
 }
 
