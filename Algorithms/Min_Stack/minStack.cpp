@@ -1,7 +1,19 @@
 #include "minStack.h"
 #include <vector>
+#include <iostream>
 #include <exception>
 #include <cstdlib>
+
+using namespace std;
+
+class stackEmptyException : public exception
+{
+  public:
+    const char *what()
+    {
+        return "The stack is empty";
+    }
+} emptyException;
 
 template <class T>
 minStack<T>::minStack()
@@ -29,7 +41,7 @@ template <class T>
 T minStack<T>::pop()
 {
     if (this->empty())
-        throw "The stack is empty";
+        throw emptyException;
     T peek = stack.back();
     min_stack.pop_back();
     stack.pop_back();
@@ -41,7 +53,7 @@ template <class T>
 T minStack<T>::peek()
 {
     if (this->empty())
-        throw "The stack is empty";
+        throw emptyException;
     return stack.back();
 }
 
@@ -49,7 +61,7 @@ template <class T>
 T minStack<T>::getMin()
 {
     if (this->empty())
-        throw "The stack is empty";
+        throw emptyException;
     return min_stack.back();
 }
 
