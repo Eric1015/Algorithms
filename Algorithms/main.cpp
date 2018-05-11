@@ -4,6 +4,8 @@
 #include "Insertion_Sort/insertionSort.h"
 #include "Selection_Sort/selectionSort.h"
 #include "Quick_Sort/quickSort.h"
+#include "Merge_Sort/mergeSort.h"
+#include "Min_Stack/minStack.h"
 
 using namespace std;
 
